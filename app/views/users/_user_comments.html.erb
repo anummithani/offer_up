@@ -1,23 +1,23 @@
 <div class="card">
   <div class="card-header d-flex align-items-center justify-content-between">
-    Items
+    Comments
 
-    <a data-toggle="collapse" href="#user_items_new_form">
-      Add item
+    <a data-toggle="collapse" href="#user_comments_new_form">
+      Add comment
     </a>
   </div>
 
   <ul class="list-group list-group-flush">
-    <% @user.items.each do |item| %>
+    <% @user.comments.each do |comment| %>
       <li class="list-group-item d-flex align-items-center justify-content-between">
-        <%= link_to item, item %>
+        <%= link_to comment, comment %>
 
       </li>
     <% end %>
 
     <div class="card-footer">
-      <div class="collapse" id="user_items_new_form">
-        <%= render partial: "users/user_items_new_form" %>
+      <div class="collapse" id="user_comments_new_form">
+        <%= render partial: "users/user_comments_new_form" %>
       </div>
     </div>
 

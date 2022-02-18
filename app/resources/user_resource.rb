@@ -8,7 +8,16 @@ class UserResource < ApplicationResource
 
   # Direct associations
 
-  has_many :items
+  has_many   :comments,
+             foreign_key: :commentor_id
+
+  has_many   :bought_items,
+             resource: ItemResource,
+             foreign_key: :buyer_id
+
+  has_many   :items_for_sale,
+             resource: ItemResource,
+             foreign_key: :seller_id
 
   # Indirect associations
 end

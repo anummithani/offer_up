@@ -1,6 +1,5 @@
-ActiveAdmin.register Item do
-  permit_params :title, :price, :description, :category_id, :location, :image,
-                :seller_id, :buyer_id
+ActiveAdmin.register Comment do
+  permit_params :item_id, :commentor_id, :comment_text
 
   # See permitted parameters documentation:
   # https://github.com/activeadmin/activeadmin/blob/master/docs/2-resource-customization.md#setting-up-strong-parameters

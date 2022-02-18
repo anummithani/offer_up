@@ -25,7 +25,14 @@ class Item < ApplicationRecord
 
   belongs_to :category
 
-  belongs_to :user
+  has_many   :comments,
+             dependent: :destroy
+
+  belongs_to :buyer,
+             class_name: "User"
+
+  belongs_to :user,
+             foreign_key: "seller_id"
 
   # Indirect associations
 
