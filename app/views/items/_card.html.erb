@@ -33,10 +33,17 @@
         <%= cl_image_tag @item.image, class: "img-fluid" %>
       </dd>
 
-      <dt>User</dt>
+      <dt>Seller</dt>
       <dd>
         <% if @item.user.present? %>
           <%= link_to item.user, item.user %>
+        <% end %>
+      </dd>
+
+      <dt>Buyer</dt>
+      <dd>
+        <% if @item.buyer.present? %>
+          <%= link_to item.buyer, item.buyer %>
         <% end %>
       </dd>
 

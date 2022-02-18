@@ -6,6 +6,7 @@ class UsersController < ApplicationController
   end
 
   def show
+    @comment = Comment.new
     @item = Item.new
   end
 

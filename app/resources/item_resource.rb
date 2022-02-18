@@ -8,13 +8,20 @@ class ItemResource < ApplicationResource
   attribute :category_id, :integer
   attribute :location, :string
   attribute :image, :string
-  attribute :user_id, :integer
+  attribute :seller_id, :integer
+  attribute :buyer_id, :integer
 
   # Direct associations
 
   belongs_to :category
 
-  belongs_to :user
+  has_many   :comments
+
+  belongs_to :buyer,
+             resource: UserResource
+
+  belongs_to :user,
+             foreign_key: :seller_id
 
   # Indirect associations
 end
